@@ -28,6 +28,7 @@ function displayLibrary(){
 
         const bookCard = document.createElement('div');
         bookCard.className = 'book';
+        bookCard.style.backgroundColor = getColor();
         const title = document.createElement('p');
         title.className = 'title';
         const author = document.createElement('p');
@@ -50,6 +51,13 @@ function displayLibrary(){
         read.textContent = book.read;
     })
 }
+
+function getColor(){ 
+    return "hsl(" + 360 * Math.random() + ',' +
+               (25 + 70 * Math.random()) + '%,' + 
+               (90 + 10 * Math.random()) + '%)'
+}
+
 
 addBookToLibrary(book1);
 addBookToLibrary(book2);
