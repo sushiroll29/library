@@ -43,6 +43,11 @@ html, body{
 .book > .title {
     margin-bottom: 5px;
     border-bottom: 1px solid grey;
+    font-size: 18px;
+}
+
+.book > .author {
+    font-size: 16px;
 }
 
 .book > .info {
@@ -52,10 +57,16 @@ html, body{
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
 }
 
+.info > span:first-child{
+    margin-top: auto;
+    justify-self: center;
+}
+
 .info > span:last-child {
+    margin-top: auto;
     justify-self: end;
 }
