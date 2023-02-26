@@ -12,26 +12,33 @@
     <link href="https://fonts.googleapis.com/css2?family=Karma&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="top-bar">
-        <span>My Library</span>
-        <div>
-            <button class="add" onclick="openForm()"><img src="./add.png" alt="add-icon" class="add-icon"></button>
+    <div class="container">
+        <div class="top-bar">
+            <span>My Library</span>
+            <div>
+                <button class="add" onclick="openForm()"><img src="./add.png" alt="add-icon" class="add-icon"></button>
+            </div>
         </div>
-    </div>
-    <div class="library">
+        <div class="library">
+        </div>
     </div>
     <div class="form-popup" id="form">
         <form action="" class="form-container">
+        <button class="cancel" onclick="closeForm()"><img src="./close.png" alt="cancel-icon" class="cancel-icon"></button>
           <h1>Add a new book to your library</h1>
+            <div class="form-fields">
+                <label for="title">Title</label>
+                <input type="text" placeholder="Enter Book Title" name="title" required>
       
-          <label for="title"><b>Title</b></label>
-          <input type="text" placeholder="Enter Book Title" name="title" required>
-      
-          <label for="author"><b>Author</b></label>
-          <input type="text" placeholder="Enter Book Author" name="author" required>
-      
-          <button type="submit" class="btn">Add</button>
-          <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                <label for="author">Author</label>
+                <input type="text" placeholder="Enter Book Author" name="author" required>
+                
+                <div class="form-buttons">
+                    <button type="submit" class="btn">Add</button>
+                    
+                </div>
+            </div>
+          
         </form>
       </div>
 </body>

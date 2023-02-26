@@ -11,15 +11,24 @@
 html, body{
     font-size: 16px;
     font-family: 'Karma', sans-serif;
+    position: relative;
 }
 
-button{
+label{
+    font-weight: normal;
+}
+
+button.add, button.cancel{
     border: none;
     background-color: white;
 }
 
 button:hover{
     cursor: pointer;
+}
+
+.container.blur {
+    filter: blur(1px) brightness(95%);
 }
 
 .top-bar{
@@ -43,9 +52,14 @@ button:hover{
     right: 15px;
 } */
 
-.add-icon {
+.add-icon{
     width: 30px;
     height: 30px;
+}
+
+.cancel-icon {
+    width: 12px;
+    height: 12px;
 }
 
 .library {
@@ -99,4 +113,63 @@ button:hover{
 
 .form-popup{
     display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    border: 1px solid var(--grey);
+    border-radius: 15px;
+    padding: 10px 50px;
+    background-color: rgb(249, 249, 249);
+}
+
+.cancel {
+    position: absolute;
+    right: 20px;
+
+}
+
+form > h1 {
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 400;
+    padding-top: 10px;
+}
+
+.form-fields {
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px;
+}
+
+.form-fields > label{
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+
+.form-fields > input {
+    appearance: none;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    margin-bottom: 13px;
+    font-family: 'Karma', sans-serif;
+}
+
+.form-buttons{
+    display: flex;
+    justify-content: space-around;
+}
+
+.form-buttons > button {
+    padding: 9px 10px 5px 10px;
+    border: 1px solid var(--grey);
+    border-radius: 10px;
+    background-color: white;
+    width: 100%;
+    font-family: 'Karma', sans-serif;
+    text-align: center;
 }
