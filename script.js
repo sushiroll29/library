@@ -28,7 +28,6 @@ function displayLibrary(){
 
         const bookCard = document.createElement('div');
         bookCard.className = 'book';
-        bookCard.style.backgroundColor = getColor();
         const title = document.createElement('p');
         title.className = 'title';
         const author = document.createElement('p');
@@ -52,10 +51,20 @@ function displayLibrary(){
     })
 }
 
-function getColor(){ 
-    return "hsl(" + 360 * Math.random() + ',' +
-               (25 + 70 * Math.random()) + '%,' + 
-               (90 + 10 * Math.random()) + '%)'
+function assignBackgroundColors(){
+    const colors = ["#fcf4dd","#ddedea","#fce1e4", "#e8dff5", "#daeaf6"];
+    const books = libraryDiv.querySelectorAll('.book');
+    let i = 0;
+
+    books.forEach(book => {
+        book.style.backgroundColor = colors[i];
+
+        if(i === colors.length - 1) {
+            i = 0;
+        } else {
+            i++;
+        }
+    })
 }
 
 
@@ -63,3 +72,4 @@ addBookToLibrary(book1);
 addBookToLibrary(book2);
 addBookToLibrary(book3);
 displayLibrary();
+assignBackgroundColors();

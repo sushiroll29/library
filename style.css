@@ -19,12 +19,24 @@ html, body{
     display: flex;
     justify-content: center;
     align-items: center;
+    /* gap: 15px; */
     height: 5rem;
+    position: relative;
 }
 
 .top-bar > span {
     font-size: 30px;
     font-weight: 400;
+}
+
+.top-bar > div {
+    position: absolute;
+    right: 15px;
+}
+
+.add-icon {
+    width: 30px;
+    height: 30px;
 }
 
 .library {
