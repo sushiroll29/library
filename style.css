@@ -13,13 +13,22 @@ html, body{
     font-family: 'Karma', sans-serif;
 }
 
+button{
+    border: none;
+    background-color: white;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
 .top-bar{
     color: #000000;
     box-shadow: 1px 1px 1px #d0d0d0;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* gap: 15px; */
+    gap: 15px;
     height: 5rem;
     position: relative;
 }
@@ -29,10 +38,10 @@ html, body{
     font-weight: 400;
 }
 
-.top-bar > div {
+/* .top-bar > div {
     position: absolute;
     right: 15px;
-}
+} */
 
 .add-icon {
     width: 30px;
@@ -86,4 +95,8 @@ html, body{
 .info > span:last-child {
     margin-top: auto;
     justify-self: end;
+}
+
+.form-popup{
+    display: none;
 }

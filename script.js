@@ -1,4 +1,6 @@
 const libraryDiv = document.querySelector('.library');
+const addButton = document.querySelector('.add');
+const form = document.querySelector('#form');
 
 let library = [];
 
@@ -65,6 +67,14 @@ function assignBackgroundColors(){
             i++;
         }
     })
+}
+
+function openForm(){
+    form.style.display = 'block';
+}
+
+function closeForm(){
+    form.style.display = 'none';
 }
 
 
