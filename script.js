@@ -22,7 +22,6 @@ const book3 = new Book('The Ballad of Songbirds and Snakes', 'Suzanne Collins', 
 
 
 function addBookToLibrary(book){
-
     library.push(book);
 }
 
@@ -30,11 +29,19 @@ function newBook(event){
         event.preventDefault();
 
         library = [];
+        let formReadFlag;
         const formTitle = document.querySelector('#title').value;
         const formAuthor = document.querySelector('#author').value;
         const formPages = document.querySelector('#pages').value;
-        const formReadFlag = document.querySelector('#read-flag').value;
+        const read = document.querySelector('#read-flag:checked');
 
+        // check if checkbox is checked
+        if(read) {
+            formReadFlag = 'read';
+        } else {
+            formReadFlag = 'not read'
+        }
+        
         const book = new Book(`${formTitle}`, `${formAuthor}`, `${formPages}`, `${formReadFlag}`);
         addBookToLibrary(book);
         closeForm();
