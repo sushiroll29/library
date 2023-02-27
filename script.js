@@ -95,6 +95,9 @@ function openForm(){
 }
 
 function closeForm(){
+    const formInputs = document.querySelectorAll(".text-input");
+    // clear all the input fields
+    formInputs.forEach(input => input.value = '');
     container.classList.remove('blur');
     container.classList.remove('no-pointer');
     form.style.display = 'none';
