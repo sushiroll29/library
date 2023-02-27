@@ -22,8 +22,26 @@ const book3 = new Book('The Ballad of Songbirds and Snakes', 'Suzanne Collins', 
 
 
 function addBookToLibrary(book){
+
     library.push(book);
 }
+
+function newBook(event){
+        event.preventDefault();
+
+        library = [];
+        const formTitle = document.querySelector('#title').value;
+        const formAuthor = document.querySelector('#author').value;
+        const formPages = document.querySelector('#pages').value;
+        const formReadFlag = document.querySelector('#read-flag').value;
+
+        const book = new Book(`${formTitle}`, `${formAuthor}`, `${formPages}`, `${formReadFlag}`);
+        addBookToLibrary(book);
+        closeForm();
+        displayLibrary();
+        assignBackgroundColors();
+    }
+
 
 function displayLibrary(){
     library.forEach(book => {
@@ -72,14 +90,17 @@ function assignBackgroundColors(){
 
 function openForm(){
     container.classList.add('blur');
+    container.classList.add('no-pointer');
     form.style.display = 'block';
 }
 
 function closeForm(){
     container.classList.remove('blur');
+    container.classList.remove('no-pointer');
     form.style.display = 'none';
 }
 
+///////// maybe add a rating function for each book (w. stars and stuff)
 
 addBookToLibrary(book1);
 addBookToLibrary(book2);

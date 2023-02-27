@@ -34,7 +34,11 @@ button:hover{
 }
 
 .container.blur {
-    filter: blur(1px) brightness(95%);
+    filter: blur(1px) opacity(50%);
+}
+
+.container.no-pointer{
+    pointer-events: none;
 }
 
 .top-bar{
@@ -65,7 +69,7 @@ button:hover{
 
 .library {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
 
 .book{
@@ -75,7 +79,7 @@ button:hover{
     padding: 10px 15px;
     margin: 15px;
     width: auto;
-    height: 200px;
+    height: 250px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -122,6 +126,7 @@ button:hover{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -25%);
+    max-width: 50%;
     border: 1px solid var(--grey);
     border-radius: 15px;
     padding: 10px 50px 20px 50px;
@@ -163,8 +168,8 @@ form > h1 {
 .form-fields > input[type="text"] {
     outline: none;
     appearance: none;
-    height: 40px;
-    line-height: 40px;
+    height: 35px;
+    line-height: 35px;
     padding: 2px 13px;
     border: none;
     border-radius: 10px;
@@ -198,15 +203,7 @@ form > h1 {
 }
 
 input[type="checkbox"] {
-
-    /* margin: 0;
-    padding: 0;
-    width: 15px;
-    height: 15px;
-    accent-color: #e8dff5; */
-
-
--webkit-appearance: none;
+    -webkit-appearance: none;
   appearance: none;
   background-color: #fff;
   margin: 0;

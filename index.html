@@ -23,33 +23,26 @@
         </div>
     </div>
     <div class="form-popup" id="form">
-        <form action="" class="form-container">
+        <form action="" class="form-container" onsubmit="newBook(event)">
             <button class="cancel" onclick="closeForm()"><img src="./close.png" alt="cancel-icon" class="cancel-icon"></button>
             <!-- <img src="./6920933.jpg" alt="book-vector" class="book-vector"> -->
             <h1>Add a new book to your library</h1>
             <div class="form-fields">
                     <label for="title">Title</label>
-                    <input type="text" placeholder="Enter Book Title" name="title" required>
+                    <input type="text" placeholder="Enter Book Title" name="title" id="title" required>
             
                     <label for="author">Author</label>
-                    <input type="text" placeholder="Enter Book Author" name="author" required>
+                    <input type="text" placeholder="Enter Book Author" name="author" id="author" required>
          
                     <label for="pages">Pages</label>
-                    <input type="text" placeholder="Enter Number of Pages" name="pages" required>
-
-                    <!-- <input type="checkbox" id="read-flag" name="read-flag" value="read-flag" checked>
-                    <label for="read-flag">I have read this book.</label>
-
-                <div class="form-buttons">
-                    <button type="submit" class="btn">Add</button>
-                </div> -->
+                    <input type="text" placeholder="Enter Number of Pages" name="pages" id="pages" required>
             </div>
             <div class="read">
-                <input type="checkbox" id="read-flag" name="read-flag" value="read-flag" checked>
+                <input type="checkbox" id="read-flag" name="read-flag" id="read-flag" checked>
                 <label for="read-flag">I have read this book.</label>
             </div>
             <div class="form-buttons">
-                <button type="submit" class="btn">Add</button>
+                <button type="submit" class="btn" id="submit-btn">Add</button>
             </div>
         </form>
       </div>
