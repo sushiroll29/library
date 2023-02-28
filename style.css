@@ -106,14 +106,21 @@ button:hover{
 }
 
 .info > span:first-child{
-    margin-top: auto;
+    margin-bottom: auto;
     justify-self: center;
     font-size: 13px;
 }
 
-.info > span:last-child {
+.info > button {
     margin-top: auto;
     justify-self: end;
+    border: 1px solid var(--grey);
+    padding: 5px 10px;
+    border-radius: 8px;
+    white-space: nowrap;
+    width: 60px;
+    text-align: center;
+    color: black;
 }
 
 .form-container{
