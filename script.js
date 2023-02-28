@@ -13,7 +13,20 @@ function Book(title, author, pages, read){
 
     this.bookCard = document.createElement('div');
     this.bookCard.className = 'book';
+    this.bookCard.setAttribute('position', 'relative');
     libraryDiv.appendChild(this.bookCard);
+
+    this.bookCardDelete = document.createElement('button');
+    this.bookCardDelete.setAttribute('style', 'border:none;background-color:rgba(0,0,0,0);position:aboslute;');
+    this.bookCardDelete.addEventListener('click', this);
+    this.bookCard.appendChild(this.bookCardDelete);
+
+    this.bookCardDeleteIcon = document.createElement('img');
+    this.bookCardDeleteIcon.className = 'delete';
+    this.bookCardDelete.appendChild(this.bookCardDeleteIcon);
+    this.bookCardDeleteIcon.setAttribute('src', './close.png');
+    this.bookCardDeleteIcon.setAttribute('style', 'width:10px;height:10px;');
+
 
     this.bookCardTitle = document.createElement('p');
     this.bookCardTitle.className = 'title';
@@ -52,6 +65,9 @@ Book.prototype.handleEvent = function(e) {
         if(e.target.classList.contains('read-button')) {
             this.toggleReadStatus(e);
         }
+        else if(e.target.classList.contains('delete')) {
+            this.deleteBook(e);
+        }
     }
 }
 
@@ -61,14 +77,20 @@ Book.prototype.toggleReadStatus = function(e) {
         this.bookCardRead.classList.add('notread');
         this.bookCardRead.textContent ='not read';
         this.read = 'not read';
-    } else if(this.read === 'not read')
-    {
+    } else if(this.read === 'not read') {
         this.bookCardRead.classList.remove('notread');
         this.bookCardRead.classList.add('read');
         this.bookCardRead.textContent = 'read';
         this.read = 'read';
     }
-    // console.log(this)
+}
+
+Book.prototype.deleteBook = function(e) {
+    if(this.index === library.indexOf(this)){
+        library.splice(this.index, 1);
+        this.bookCard.remove();
+        assignBackgroundColors();
+    }
 }
 
 function newBook(event){
