@@ -2,6 +2,8 @@
     --grey: #bebebe;
     --darker-grey: #606060;
     --pastel-green: #5dbb63;
+    --read: #7ABD91;
+    --notread: #FF6962;
 }
 
 * {
@@ -114,12 +116,21 @@ button:hover{
 .info > button {
     margin-top: auto;
     justify-self: end;
-    border: 1px solid var(--grey);
-    padding: 5px 10px;
+    border: 0;
+    padding: 7px 10px;
     border-radius: 8px;
     white-space: nowrap;
-    width: 60px;
+    width: 70px;
     text-align: center;
+}
+
+.info > button.read {
+    background-color: var(--read);
+    color: black;
+}
+
+.info > button.notread{
+    background-color: var(--notread);
     color: black;
 }
 

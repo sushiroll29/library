@@ -36,8 +36,10 @@ function Book(title, author, pages, read){
     this.bookCardInfo.appendChild(this.bookCardRead);
 
     (read == 'read')
-        ? this.bookCardRead.style.backgroundColor = 'green'  
-        : this.bookCardRead.style.backgroundColor = 'red';
+        // ? this.bookCardRead.style.backgroundColor = 'green'  
+        // : this.bookCardRead.style.backgroundColor = 'red';
+        ? this.bookCardRead.classList.add('read')
+        : this.bookCardRead.classList.add('notread');
 
     this.bookCardTitle.textContent = this.title;
     this.bookCardAuthor.textContent = 'by ' + this.author;
@@ -55,13 +57,15 @@ Book.prototype.handleEvent = function(e) {
 
 Book.prototype.toggleReadStatus = function(e) {
     if(this.read === 'read') {
+        this.bookCardRead.classList.remove('read');
+        this.bookCardRead.classList.add('notread');
         this.bookCardRead.textContent ='not read';
-        this.bookCardRead.style.backgroundColor = 'red';
         this.read = 'not read';
     } else if(this.read === 'not read')
     {
+        this.bookCardRead.classList.remove('notread');
+        this.bookCardRead.classList.add('read');
         this.bookCardRead.textContent = 'read';
-        this.bookCardRead.style.backgroundColor = 'green';
         this.read = 'read';
     }
     // console.log(this)
