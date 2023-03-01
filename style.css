@@ -211,6 +211,7 @@ form > h1 {
   border: 1px solid var(--grey);
   border-radius: 10px;
   background-color: white;
+  color: black;
   width: 100%;
   font-family: "Karma", sans-serif;
   font-size: 14px;
