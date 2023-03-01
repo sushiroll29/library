@@ -1,5 +1,4 @@
 const libraryDiv = document.querySelector(".library");
-const addButton = document.querySelector(".add");
 const container = document.querySelector(".container");
 const formPopup = document.querySelector("#popup");
 
