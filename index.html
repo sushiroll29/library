@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Karma&display=swap" rel="stylesheet">
+    <link type="image/png" rel="icon" href="./book.png">
 </head>
 <body>
     <div class="container">
@@ -22,9 +23,9 @@
         <div class="library">
         </div>
     </div>
-    <div class="form-popup" id="form">
-        <form action="" class="form-container" onsubmit="newBook(event)">
-            <button class="cancel" onclick="closeForm()"><img src="./close.png" alt="cancel-icon" class="cancel-icon"></button>
+    <div class="form-popup" id="popup">
+        <form action="" id="form" class="form-container" onsubmit="newBook(event)">
+            <button class="cancel" type="reset" onclick="closeForm()"><img src="./close.png" alt="cancel-icon" class="cancel-icon"></button>
             <h1>Add a new book to your library</h1>
             <div class="form-fields">
                     <label for="title">Title</label>

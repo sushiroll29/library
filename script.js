@@ -1,7 +1,7 @@
 const libraryDiv = document.querySelector('.library');
 const addButton = document.querySelector('.add');
-const form = document.querySelector('#form');
 const container = document.querySelector('.container');
+const formPopup = document.querySelector('#popup');
 
 let library = [];
 
@@ -159,23 +159,18 @@ function assignBackgroundColors(){
 }
 
 function openForm(){
+    const form = document.querySelector('#form');
+    form.reset(); 
     container.classList.add('blur');
     container.classList.add('no-pointer');
-    form.style.display = 'block';
+    formPopup.style.display = 'block';
 }
 
 function closeForm(){
-    const formInputs = document.querySelectorAll(".text-input");
-    // clear all the input fields
-    formInputs.forEach(input => {
-        input.value = '';
-        // input.removeAttribute('required');
-});
     container.classList.remove('blur');
     container.classList.remove('no-pointer');
-    form.style.display = 'none';
+    formPopup.style.display = 'none';
 }
-
 
 
 ///////// maybe add a rating function for each book (w. stars and stuff)
