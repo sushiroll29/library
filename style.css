@@ -1,228 +1,229 @@
-:root{
-    --grey: #bebebe;
-    --darker-grey: #606060;
-    --pastel-green: #5dbb63;
-    --read: #7ABD91;
-    --notread: #FF6962;
+:root {
+  --grey: #bebebe;
+  --darker-grey: #606060;
+  --pastel-green: #5dbb63;
+  --read: #7abd91;
+  --notread: #ff6962;
 }
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-html, body{
-    font-size: 16px;
-    font-family: 'Karma', sans-serif;
-    position: relative;
+html,
+body {
+  font-size: 16px;
+  font-family: "Karma", sans-serif;
+  position: relative;
 }
 
-label{
-    font-weight: normal;
+label {
+  font-weight: normal;
 }
 
-button.add, button.cancel{
-    border: none;
-    background-color: white;
+button.add,
+button.cancel {
+  border: none;
+  background-color: white;
 }
 
-button.add:active, button.add:focus{
-    background-color: rgba(255, 255, 255, 0);
+button.add:active,
+button.add:focus {
+  background-color: rgba(255, 255, 255, 0);
 }
 
-button:hover{
-    cursor: pointer;
+button:hover {
+  cursor: pointer;
 }
 
 .container.blur {
-    filter: blur(1px) opacity(50%);
+  filter: blur(1px) opacity(50%);
 }
 
-.container.no-pointer{
-    pointer-events: none;
+.container.no-pointer {
+  pointer-events: none;
 }
 
-.top-bar{
-    color: #000000;
-    box-shadow: 1px 1px 1px #d0d0d0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    height: 5rem;
-    position: relative;
+.top-bar {
+  color: #000000;
+  box-shadow: 1px 1px 1px #d0d0d0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  height: 5rem;
+  position: relative;
 }
 
 .top-bar > span {
-    font-size: 30px;
-    font-weight: 400;
+  font-size: 30px;
+  font-weight: 400;
 }
 
-.add-icon{
-    width: 30px;
-    height: 30px;
+.add-icon {
+  width: 30px;
+  height: 30px;
 }
 
 .cancel-icon {
-    width: 12px;
-    height: 12px;
+  width: 12px;
+  height: 12px;
 }
 
 .library {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
 
-.book{
-    text-align: center;
-    border: 1px solid var(--grey);
-    border-radius: 15px;
-    padding: 10px 15px;
-    margin: 15px;
-    width: auto;
-    height: 250px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.book {
+  text-align: center;
+  border: 1px solid var(--grey);
+  border-radius: 15px;
+  padding: 10px 15px;
+  margin: 15px;
+  width: auto;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .book > .title {
-    margin-bottom: 10px;
-    border-bottom: 1px solid grey;
-    font-size: 19px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid grey;
+  font-size: 19px;
 }
 
 .book > .author {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .book > .info {
-    width: 100%;
-    height: 100%;
-    padding: 5px 70px;
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 5px 70px;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: center;
 }
 
-.info > span:first-child{
-    margin-bottom: auto;
-    justify-self: center;
-    font-size: 13px;
+.info > span:first-child {
+  margin-bottom: auto;
+  justify-self: center;
+  font-size: 13px;
 }
 
 .info > button {
-    margin-top: auto;
-    justify-self: end;
-    border: 0;
-    padding: 7px 10px;
-    border-radius: 8px;
-    white-space: nowrap;
-    width: 70px;
-    text-align: center;
+  margin-top: auto;
+  justify-self: end;
+  border: 0;
+  padding: 7px 10px;
+  border-radius: 8px;
+  white-space: nowrap;
+  width: 70px;
+  text-align: center;
 }
 
 .info > button.read {
-    background-color: var(--read);
-    color: black;
+  background-color: var(--read);
+  color: black;
 }
 
-.info > button.notread{
-    background-color: var(--notread);
-    color: black;
+.info > button.notread {
+  background-color: var(--notread);
+  color: black;
 }
 
-.form-container{
-    position: relative;
+.form-container {
+  position: relative;
 }
 
-.form-popup{
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 50%;
-    border: 1px solid var(--grey);
-    border-radius: 15px;
-    padding: 10px 50px 20px 50px;
-    background-color: rgb(249, 249, 249);
-    transition: all 1s ease-in;
+.form-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 50%;
+  border: 1px solid var(--grey);
+  border-radius: 15px;
+  padding: 10px 50px 20px 50px;
+  background-color: rgb(249, 249, 249);
+  transition: all 1s ease-in;
 }
 
 .cancel {
-    position: absolute;
-    right: -2rem;
-
+  position: absolute;
+  right: -2rem;
 }
 
 form > h1 {
-    margin-bottom: 35px;
-    text-align: center;
-    font-size: 25px;
-    font-weight: 400;
-    padding-top: 10px;
+  margin-bottom: 35px;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 400;
+  padding-top: 10px;
 }
 
 .form-fields {
-    display: grid;
-    grid-template-columns: max-content 80%;
-    gap: 20px 10px;
-    align-items: center;
+  display: grid;
+  grid-template-columns: max-content 80%;
+  gap: 20px 10px;
+  align-items: center;
 }
 
-.form-fields > label{
-    font-size: 14px;
-    font-weight: normal;
-    text-align: right;
-    
+.form-fields > label {
+  font-size: 14px;
+  font-weight: normal;
+  text-align: right;
 }
 
-.form-fields label:after{
-    content: ":";
+.form-fields label:after {
+  content: ":";
 }
 
 .form-fields > input[type="text"] {
-    outline: none;
-    appearance: none;
-    height: 35px;
-    line-height: 35px;
-    padding: 2px 13px;
-    border: none;
-    border-radius: 10px;
-    outline: none;
-    font-family: 'Karma', sans-serif;
-    font-size: 13px;
-    border: 1px solid var(--grey);
+  outline: none;
+  appearance: none;
+  height: 35px;
+  line-height: 35px;
+  padding: 2px 13px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  font-family: "Karma", sans-serif;
+  font-size: 13px;
+  border: 1px solid var(--grey);
 }
 
-.form-buttons{
-    display: flex;
-    justify-content: space-around;
-    grid-column: 1 / 3;
-    margin-top: 20px;
+.form-buttons {
+  display: flex;
+  justify-content: space-around;
+  grid-column: 1 / 3;
+  margin-top: 20px;
 }
 
 .form-buttons > button {
-    padding: 9px 10px 5px 10px;
-    border: 1px solid var(--grey);
-    border-radius: 10px;
-    background-color: white;
-    width: 100%;
-    font-family: 'Karma', sans-serif;
-    font-size: 14px;
-    text-align: center;
+  padding: 9px 10px 5px 10px;
+  border: 1px solid var(--grey);
+  border-radius: 10px;
+  background-color: white;
+  width: 100%;
+  font-family: "Karma", sans-serif;
+  font-size: 14px;
+  text-align: center;
 }
 
-.form-buttons > button:hover{
-    border: 1px solid var(--pastel-green);
-    color: var(--pastel-green);
+.form-buttons > button:hover {
+  border: 1px solid var(--pastel-green);
+  color: var(--pastel-green);
 }
 
 input[type="checkbox"] {
-    -webkit-appearance: none;
+  -webkit-appearance: none;
   appearance: none;
   background-color: #fff;
   margin: 0;
@@ -230,7 +231,7 @@ input[type="checkbox"] {
   color: currentColor;
   width: 1.15em;
   height: 1.15em;
-  border: .8px solid currentColor;
+  border: 0.8px solid currentColor;
   border-radius: 0.15em;
   transform: translateY(-0.075em);
   display: grid;
@@ -238,25 +239,25 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]::before {
-    content: "";
-    width: 0.65em;
-    height: 0.65em;
-    transform: scale(0);
-    transition: 120ms transform ease-in-out;
-    box-shadow: inset 1em 1em var(--darker-grey);
-    transform-origin: bottom left;
-    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
-  }
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--darker-grey);
+  transform-origin: bottom left;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
 
-  input[type="checkbox"]:checked::before {
-    transform: scale(1);
-  }
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
 
 form .read {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 7px;
-    margin-top: 20px;
-    font-size: 14px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 7px;
+  margin-top: 20px;
+  font-size: 14px;
 }

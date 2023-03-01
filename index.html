@@ -1,53 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Library</title>
     <script src="./script.js" defer></script>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Karma&display=swap" rel="stylesheet">
-    <link type="image/png" rel="icon" href="./book.png">
-</head>
-<body>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karma&display=swap"
+      rel="stylesheet"
+    />
+    <link type="image/png" rel="icon" href="./book.png" />
+  </head>
+  <body>
     <div class="container">
-        <div class="top-bar">
-            <span>My Library</span>
-            <div>
-                <button class="add" onclick="openForm()"><img src="./add.png" alt="add-icon" class="add-icon"></button>
-            </div>
+      <div class="top-bar">
+        <span>My Library</span>
+        <div>
+          <button class="add" onclick="openForm()">
+            <img src="./add.png" alt="add-icon" class="add-icon" />
+          </button>
         </div>
-        <div class="library">
-        </div>
+      </div>
+      <div class="library"></div>
     </div>
     <div class="form-popup" id="popup">
-        <form action="" id="form" class="form-container" onsubmit="newBook(event)">
-            <button class="cancel" type="reset" onclick="closeForm()"><img src="./close.png" alt="cancel-icon" class="cancel-icon"></button>
-            <h1>Add a new book to your library</h1>
-            <div class="form-fields">
-                    <label for="title">Title</label>
-                    <input type="text" placeholder="Enter Book Title" name="title" id="title" class="text-input" required>
-            
-                    <label for="author">Author</label>
-                    <input type="text" placeholder="Enter Book Author" name="author" id="author" class="text-input" required>
-         
-                    <label for="pages">Pages</label>
-                    <input type="text" placeholder="Enter Number Of Pages" name="pages" id="pages" class="text-input" pattern="^([1-9]{1}\d{0,3})" required>
-            </div>
-            <div class="read">
-                <input type="checkbox" id="read-flag" name="read-flag" id="read-flag">
-                <label for="read-flag">I have read this book.</label>
-            </div>
-            <div class="rating">
+      <form
+        action=""
+        id="form"
+        class="form-container"
+        onsubmit="newBook(event)"
+      >
+        <button class="cancel" type="reset" onclick="closeForm()">
+          <img src="./close.png" alt="cancel-icon" class="cancel-icon" />
+        </button>
+        <h1>Add a new book to your library</h1>
+        <div class="form-fields">
+          <label for="title">Title</label>
+          <input
+            type="text"
+            placeholder="Enter Book Title"
+            name="title"
+            id="title"
+            class="text-input"
+            required
+          />
 
-            </div>
-            <div class="form-buttons">
-                <button type="submit" class="btn" id="submit-btn">Add</button>
-            </div>
-        </form>
-      </div>
-</body>
+          <label for="author">Author</label>
+          <input
+            type="text"
+            placeholder="Enter Book Author"
+            name="author"
+            id="author"
+            class="text-input"
+            required
+          />
+
+          <label for="pages">Pages</label>
+          <input
+            type="text"
+            placeholder="Enter Number Of Pages"
+            name="pages"
+            id="pages"
+            class="text-input"
+            pattern="^([1-9]{1}\d{0,3})"
+            required
+          />
+        </div>
+        <div class="read">
+          <input
+            type="checkbox"
+            id="read-flag"
+            name="read-flag"
+            id="read-flag"
+          />
+          <label for="read-flag">I have read this book.</label>
+        </div>
+        <div class="rating"></div>
+        <div class="form-buttons">
+          <button type="submit" class="btn" id="submit-btn">Add</button>
+        </div>
+      </form>
+    </div>
+  </body>
 </html>
