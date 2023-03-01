@@ -139,7 +139,7 @@ function newBook(event) {
 function capitalize(word) {
   return word
     .toLowerCase()
-    .split(" ")
+    .split(/[\s\-]/)
     .map((word) => word.charAt(0).toUpperCase() + word.substring(1))
     .join(" ");
 }
