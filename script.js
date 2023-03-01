@@ -17,7 +17,7 @@ function Book(title, author, pages, read){
     libraryDiv.appendChild(this.bookCard);
 
     this.bookCardDelete = document.createElement('button');
-    this.bookCardDelete.setAttribute('style', 'border:none;background-color:rgba(0,0,0,0);position:aboslute;');
+    this.bookCardDelete.setAttribute('style', 'border:none;background-color:rgba(0,0,0,0);align-self:flex-end;');
     this.bookCardDelete.addEventListener('click', this);
     this.bookCard.appendChild(this.bookCardDelete);
 
@@ -49,8 +49,6 @@ function Book(title, author, pages, read){
     this.bookCardInfo.appendChild(this.bookCardRead);
 
     (read == 'read')
-        // ? this.bookCardRead.style.backgroundColor = 'green'  
-        // : this.bookCardRead.style.backgroundColor = 'red';
         ? this.bookCardRead.classList.add('read')
         : this.bookCardRead.classList.add('notread');
 
@@ -58,6 +56,8 @@ function Book(title, author, pages, read){
     this.bookCardAuthor.textContent = 'by ' + this.author;
     this.bookCardPageNumber.textContent = this.pages + ' pages';
     this.bookCardRead.textContent = this.read;
+
+    console.log(this);
 }
 
 Book.prototype.handleEvent = function(e) {
@@ -86,20 +86,35 @@ Book.prototype.toggleReadStatus = function(e) {
 }
 
 Book.prototype.deleteBook = function(e) {
-    if(this.index === library.indexOf(this)){
-        library.splice(this.index, 1);
+    if(this.index === library.indexOf(this)) {
         this.bookCard.remove();
+        library.splice(this.index, 1);
+
+        // reassign the index of each Book object to match with its new Library array index
+        library.forEach(bookInLibrary => bookInLibrary['index'] = library.indexOf(bookInLibrary));
         assignBackgroundColors();
-    }
+    }   
+    console.log(library)
 }
 
 function newBook(event){
     event.preventDefault();
     let formReadFlag;
+    const formTitleField = document.querySelector('#title');
     const formTitle = document.querySelector('#title').value;
     const formAuthor = document.querySelector('#author').value;
     const formPages = document.querySelector('#pages').value;
     const readFlag = document.querySelector('#read-flag:checked');
+
+        const books = libraryDiv.querySelectorAll('.book');
+        books.forEach(bookInLibrary => {
+            if(formTitle == bookInLibrary.title) {
+                console.log('nooo');
+            }
+    })
+
+    const capitalFormTitle = capitalize(formTitle);
+    const capitalFormAuthor = capitalize(formAuthor);
 
     // check if checkbox is checked
     if(readFlag) {
@@ -108,12 +123,23 @@ function newBook(event){
         formReadFlag = 'not read';
     }
     
-    const book = new Book(`${formTitle}`, `${formAuthor}`, `${formPages}`, formReadFlag)
+    const book = new Book(`${capitalFormTitle}`, `${capitalFormAuthor}`, `${formPages}`, formReadFlag)
     library.push(book);
     book.index = library.length - 1;
     closeForm();
     assignBackgroundColors();
 
+}
+
+function assignIndex(){
+
+}
+
+function capitalize(word){
+    return word.toLowerCase()
+    .split(' ')
+    .map((word) => word.charAt(0).toUpperCase() + word.substring(1))
+    .join(' '); 
 }
 
 function assignBackgroundColors(){
@@ -149,7 +175,6 @@ function closeForm(){
     container.classList.remove('no-pointer');
     form.style.display = 'none';
 }
-
 
 
 
