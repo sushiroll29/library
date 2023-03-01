@@ -27,7 +27,7 @@ function Book(title, author, pages, read) {
   this.bookCardDeleteIcon = document.createElement("img");
   this.bookCardDeleteIcon.className = "delete";
   this.bookCardDelete.appendChild(this.bookCardDeleteIcon);
-  this.bookCardDeleteIcon.setAttribute("src", "./close.png");
+  this.bookCardDeleteIcon.setAttribute("src", "./icons/close.png");
   this.bookCardDeleteIcon.setAttribute("style", "width:10px;height:10px;");
 
   this.bookCardTitle = document.createElement("p");
