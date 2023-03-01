@@ -58,21 +58,19 @@ function Book(title, author, pages, read) {
   this.bookCardAuthor.textContent = "by " + this.author;
   this.bookCardPageNumber.textContent = this.pages + " pages";
   this.bookCardRead.textContent = this.read;
-
-  console.log(this);
 }
 
 Book.prototype.handleEvent = function (e) {
   if (e.type === "click") {
     if (e.target.classList.contains("read-button")) {
-      this.toggleReadStatus(e);
+      this.toggleReadStatus();
     } else if (e.target.classList.contains("delete")) {
-      this.deleteBook(e);
+      this.deleteBook();
     }
   }
 };
 
-Book.prototype.toggleReadStatus = function (e) {
+Book.prototype.toggleReadStatus = function () {
   if (this.read === "read") {
     this.bookCardRead.classList.remove("read");
     this.bookCardRead.classList.add("notread");
@@ -86,7 +84,7 @@ Book.prototype.toggleReadStatus = function (e) {
   }
 };
 
-Book.prototype.deleteBook = function (e) {
+Book.prototype.deleteBook = function () {
   if (this.index === library.indexOf(this)) {
     this.bookCard.remove();
     library.splice(this.index, 1);
@@ -104,7 +102,6 @@ Book.prototype.deleteBook = function (e) {
 function newBook(event) {
   event.preventDefault();
   let formReadFlag;
-  const formTitleField = document.querySelector("#title");
   const formTitle = document.querySelector("#title").value;
   const formAuthor = document.querySelector("#author").value;
   const formPages = document.querySelector("#pages").value;
@@ -138,8 +135,6 @@ function newBook(event) {
   closeForm();
   assignBackgroundColors();
 }
-
-function assignIndex() {}
 
 function capitalize(word) {
   return word
